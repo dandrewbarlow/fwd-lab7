@@ -19,7 +19,12 @@ export default class Todo extends Component {
     }
 
     addItem(item){
+        if (item == ''){
+            return;
+        }
+
         // https://stackoverflow.com/questions/37435334/correct-way-to-push-into-state-array
+
         this.setState({
             items: [...this.state.items, item]
         });
