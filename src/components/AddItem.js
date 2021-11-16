@@ -10,7 +10,8 @@ export default class AddItem extends Component {
 
     handleAddItem() {
         this.props.addItem(this.state.textInput.current.value);
-        this.state.textInput.current.value = '';
+        // ! works, but directly mutates state
+        // this.state.textInput.current.value = '';
     }
 
     render() {

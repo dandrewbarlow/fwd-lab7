@@ -8,9 +8,11 @@ export default class Todo extends Component {
 
         this.state = {
             items: [
-                'list item 1',
-                'list item 2',
-                'list item 3'
+                'create todo list',
+                'buy the earf',
+                'be king',
+                'manifest mechanical bees',
+                'bit.ly/3HuDKIE'
             ]
         }
 
@@ -19,7 +21,7 @@ export default class Todo extends Component {
     }
 
     addItem(item){
-        if (item == ''){
+        if (item === ''){
             return;
         }
 
@@ -48,7 +50,10 @@ export default class Todo extends Component {
 
         return (
             <div id="todo">
-                <h1>TODO</h1>
+                <header>
+                    <h1>TODO</h1>
+                    <p>You have <span id="count">{this.state.items.length}</span> things to do</p>
+                </header>
                 <ul>
                     {items}
                 </ul>

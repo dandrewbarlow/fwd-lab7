@@ -39,8 +39,18 @@ html {
 
 h1 {
   font-size: 45pt;
-  padding-bottom: .2em;
+}
+
+header {
+  font-size: 15pt;
+  padding-bottom: 1em;
   border-bottom: 3px dashed black;
+}
+
+#count {
+  color: #7200d5;
+  text-decoration: underline;
+  text-underline-offset: .1em;
 }
 
 ul {
@@ -49,11 +59,14 @@ ul {
 
 li {
   list-style: none;
-  margin: .333em;
+  /* margin: .333em; */
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   font-size: 20pt;
+  text-align: left;
+  border-bottom: 1px dashed black;
+  padding: .3em;
 }
 
 .listItem button{
