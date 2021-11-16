@@ -9,7 +9,7 @@ export default class ListItem extends Component {
                     {this.props.item} 
                     <button 
                     className="removeItem" 
-                    onClick={this.props.removeItem(this.props.item)}
+                    onClick={() => this.props.removeItem(this.props.item)}
                     >X</button>
                 </p>
             </li>

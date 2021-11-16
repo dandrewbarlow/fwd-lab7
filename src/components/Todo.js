@@ -15,7 +15,7 @@ export default class Todo extends Component {
         }
 
         this.addItem = this.addItem.bind(this);
-        // this.removeItem = this.removeItem.bind(this);
+        this.removeItem = this.removeItem.bind(this);
     }
 
     addItem(item){
@@ -29,13 +29,12 @@ export default class Todo extends Component {
     removeItem = (item) => {
         
         // https://www.w3docs.com/snippets/javascript/how-to-get-the-index-of-an-array-that-contains-objects-in-javascript.html
-        // let index = this.state.items.findIndex( ele => ele === item );
-
-        // this.setState({
-        //     items: [
-        //         this.state.items.splice(index, 1)
-        //     ]
-        // })
+        let index = this.state.items.findIndex( ele => ele === item );
+        let itemArr = [...this.state.items];
+        itemArr.splice(index, 1);
+        this.setState({
+            items: itemArr
+        })
         console.log(item)
     }
     render() {
