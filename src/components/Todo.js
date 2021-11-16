@@ -15,22 +15,32 @@ export default class Todo extends Component {
         }
 
         this.addItem = this.addItem.bind(this);
-        this.removeItem = this.removeItem.bind(this);
+        // this.removeItem = this.removeItem.bind(this);
     }
 
     addItem(item){
-        console.log(item);
+        // https://stackoverflow.com/questions/37435334/correct-way-to-push-into-state-array
         this.setState({
-            items: this.state.items.push(item)
+            items: [...this.state.items, item]
         });
+        console.log(item);
     }
 
-    removeItem(item) {
+    removeItem = (item) => {
+        
+        // https://www.w3docs.com/snippets/javascript/how-to-get-the-index-of-an-array-that-contains-objects-in-javascript.html
+        // let index = this.state.items.findIndex( ele => ele === item );
+
+        // this.setState({
+        //     items: [
+        //         this.state.items.splice(index, 1)
+        //     ]
+        // })
         console.log(item)
     }
     render() {
 
-        let items = this.state.items.map(item => <ListItem removeItem={this.removeItem} item={item}/>)
+        let items = Array.isArray(this.state.items) && this.state.items.map(item => <ListItem removeItem={this.removeItem} item={item}/>)
 
         return (
             <div id="todo">

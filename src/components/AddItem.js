@@ -15,7 +15,6 @@ export default class AddItem extends Component {
                 <input ref={this.state.textInput} type='text'></input>
                 <button onClick={() => {
                     this.props.addItem(this.state.textInput.current.value);
-                    console.log(this.state.textInput.current.value);
                 }}>Add Item</button>
             </>
         )
